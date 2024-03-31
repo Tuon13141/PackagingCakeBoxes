@@ -77,7 +77,7 @@ public class LevelController : MonoBehaviour
         int totalStar = AssessmentStar();
         SaveData(totalStar);
         
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
         objectController.LevelCompleted(totalStar);
     }

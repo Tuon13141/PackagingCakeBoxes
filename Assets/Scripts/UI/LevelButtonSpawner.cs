@@ -39,7 +39,6 @@ public class LevelButtonSpawner : MonoBehaviour
         List<LevelSave> levelSave = SaveSystem.LoadLevels();
         if (levelSave == null)
         {
-            Debug.Log("null");
             levelSave = new List<LevelSave>();  
             for(int i = 0; i < totalLevel; i++)
             {
