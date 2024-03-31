@@ -60,7 +60,7 @@ public class MatrixController : MonoBehaviour
     IEnumerator CheckWinCondition()
     {
         yield return new WaitUntil(() => totalCake == 0);
-        levelController.Victory = true;
+        levelController.IsVictory = true;
     }
 
     void CheckForMoveableObjectReachTargetPoint()

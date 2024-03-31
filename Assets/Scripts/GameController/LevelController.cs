@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
 
     public int MaxPlayTime = 45;
     private int timePlayed;
-    public bool Victory { get; set; } = false;
+    public bool IsVictory { get; set; } = false;
 
     public ObjectController objectController;
     public MatrixController matrixController;
@@ -46,13 +46,13 @@ public class LevelController : MonoBehaviour
 
         timePlayed--;
 
-        if(timePlayed <= 0 && !Victory)
+        if(timePlayed <= 0 && !IsVictory)
         {
             objectController.SetTimerText("0");
             LevelFailed();
             yield break;
         }
-        else if (Victory)
+        else if (IsVictory)
         {
             yield break;
         }
@@ -70,7 +70,7 @@ public class LevelController : MonoBehaviour
 
     IEnumerator LevelCompleted()
     {
-        yield return new WaitUntil(() => Victory);
+        yield return new WaitUntil(() => IsVictory);
 
         swipeController.DisableSwipe();
 
