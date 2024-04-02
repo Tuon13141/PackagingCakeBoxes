@@ -16,6 +16,10 @@ public class LevelController : MonoBehaviour
     public SwipeController swipeController;
     void Start()
     {
+        if (!PlayerPrefs.HasKey("CurrentLevel"))
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 1);
+        }
         PlayerPrefs.SetInt("TotalLevel", Levels.Count);
         currentLevel = PlayerPrefs.GetInt("CurrentLevel") - 1;
         timePlayed = MaxPlayTime;
