@@ -67,8 +67,13 @@ public class ObjectController : MonoBehaviour
     {
         EnableNotiCanvas();
         Noti.sprite = victoryImg;
-        if(PlayerPrefs.GetInt("Level") + 1 <= PlayerPrefs.GetInt("TotalLevel"))
+        if(PlayerPrefs.GetInt("CurrentLevel") + 1 <= PlayerPrefs.GetInt("TotalLevel"))
+        {
+            Debug.Log(PlayerPrefs.GetInt("Level") + 1);
             NextButton.SetActive(true);
+        }
+            
+        else NextButton.SetActive(false);
 
         for(int i = 0; i < totalStar; i++)
         {
